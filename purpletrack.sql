@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2026 at 09:11 AM
+-- Generation Time: Nov 05, 2026 at 05:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -160,7 +160,7 @@ CREATE TABLE `cash_payments` (
   `change_amount` decimal(10,2) NOT NULL DEFAULT 0.00,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cash_payments`
@@ -624,7 +624,7 @@ CREATE TABLE `deliveries` (
   `delivery_status_id` smallint(5) UNSIGNED NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `deliveries`
@@ -899,7 +899,7 @@ CREATE TABLE `finished_goods_inventory` (
   `expiration_date` date NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `last_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `finished_goods_inventory`
@@ -1013,7 +1013,7 @@ CREATE TABLE `forecast_reports` (
   `generated_date` datetime NOT NULL DEFAULT current_timestamp(),
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `forecast_reports`
@@ -1820,7 +1820,7 @@ CREATE TABLE `orders` (
   `total_amount` decimal(10,2) NOT NULL DEFAULT 0.00,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `orders`
@@ -2624,7 +2624,7 @@ CREATE TABLE `order_items` (
   `custom_notes` text DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `order_items`
@@ -4572,7 +4572,7 @@ CREATE TABLE `payments` (
   `verified_at` datetime DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `payments`
@@ -5481,7 +5481,7 @@ CREATE TABLE `priority_levels` (
   `description` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `priority_levels`
@@ -5520,7 +5520,7 @@ CREATE TABLE `production_recommendations` (
   `generated_date` datetime NOT NULL DEFAULT current_timestamp(),
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `production_recommendations`
@@ -5629,7 +5629,7 @@ CREATE TABLE `products` (
   `stockout_cost_per_unit` decimal(10,2) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
@@ -5687,7 +5687,7 @@ CREATE TABLE `purchase_orders` (
   `po_status_id` smallint(5) UNSIGNED NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `purchase_orders`
@@ -5723,7 +5723,7 @@ CREATE TABLE `purchase_order_items` (
   `quantity_received` decimal(12,3) NOT NULL DEFAULT 0.000,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `purchase_order_items`
@@ -5781,7 +5781,7 @@ CREATE TABLE `raw_materials` (
   `is_active` tinyint(1) NOT NULL DEFAULT 1,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `raw_materials`
@@ -5826,7 +5826,7 @@ CREATE TABLE `recipes` (
   `quantity_required` decimal(12,3) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `recipes`
@@ -5991,7 +5991,7 @@ CREATE TABLE `stock_movements` (
   `reviewed_by` int(10) UNSIGNED DEFAULT NULL,
   `reviewed_at` datetime DEFAULT NULL,
   `moved_at` datetime NOT NULL DEFAULT current_timestamp()
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `stock_movements`
@@ -7203,7 +7203,7 @@ ALTER TABLE `daily_closings`
 -- AUTO_INCREMENT for table `deliveries`
 --
 ALTER TABLE `deliveries`
-  MODIFY `delivery_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `delivery_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=229;
 
 --
 -- AUTO_INCREMENT for table `delivery_statuses`
@@ -7215,7 +7215,7 @@ ALTER TABLE `delivery_statuses`
 -- AUTO_INCREMENT for table `finished_goods_inventory`
 --
 ALTER TABLE `finished_goods_inventory`
-  MODIFY `inventory_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `inventory_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `forecast_methods`
@@ -7227,7 +7227,7 @@ ALTER TABLE `forecast_methods`
 -- AUTO_INCREMENT for table `forecast_reports`
 --
 ALTER TABLE `forecast_reports`
-  MODIFY `forecast_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `forecast_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=291;
 
 --
 -- AUTO_INCREMENT for table `fulfillment_types`
@@ -7245,13 +7245,13 @@ ALTER TABLE `movement_types`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=779;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `order_item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `order_item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1872;
 
 --
 -- AUTO_INCREMENT for table `order_statuses`
@@ -7269,7 +7269,7 @@ ALTER TABLE `order_types`
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `payment_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=800;
 
 --
 -- AUTO_INCREMENT for table `payment_methods`
@@ -7299,19 +7299,19 @@ ALTER TABLE `po_statuses`
 -- AUTO_INCREMENT for table `priority_levels`
 --
 ALTER TABLE `priority_levels`
-  MODIFY `priority_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `priority_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `production_recommendations`
 --
 ALTER TABLE `production_recommendations`
-  MODIFY `recommendation_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `recommendation_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `product_types`
@@ -7323,25 +7323,25 @@ ALTER TABLE `product_types`
 -- AUTO_INCREMENT for table `purchase_orders`
 --
 ALTER TABLE `purchase_orders`
-  MODIFY `po_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `po_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `purchase_order_items`
 --
 ALTER TABLE `purchase_order_items`
-  MODIFY `po_item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `po_item_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `raw_materials`
 --
 ALTER TABLE `raw_materials`
-  MODIFY `material_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `material_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `recipe_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `recipe_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -7353,7 +7353,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `stock_movements`
 --
 ALTER TABLE `stock_movements`
-  MODIFY `movement_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `movement_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=759;
 
 --
 -- AUTO_INCREMENT for table `suppliers`
